@@ -41,10 +41,28 @@ function CharacterDetails () {
   }
 
   return ( //otherwise, if everything is ok and loaded
-    <div className="min-h-screen  text-white p-6" style={{ backgroundImage: `url(${background})` }}></div>
+    <div className="min-h-screen  text-white p-6" style={{ backgroundImage: `url(${background})` }}>
+      <button onClick={() => navigate(-1)}  className="mb-4 bg-white hover:bg-black text-black px-4 py-2 rounded-lg hover:text-white ease-in-out duration-500">
+      <span>🡐</span> Back
+      </button>
     
-  )
-    }
+    <div className='"max-w-md mx-auto bg-gray-900 p-6 rounded-lg shadow-2xl"'>
+      <img
+          src={character.image}
+          alt={character.name}
+          className="w-full rounded-full mb-4 p-3 border-2 "
+        />
+        <h2 className="text-2xl font-bold mb-2 underline text-center text-purple-700">{character.name}</h2>
+        <p><strong className=' italic text-purple-700'>Status :</strong>  {character.status}</p>
+        <p><strong className='italic text-purple-700'>Species :</strong>  {character.species}</p>
+        <p><strong className='italic text-purple-700'>Gender :</strong>  {character.gender}</p>
+        <p><strong className='italic text-purple-700'>Origin :</strong>  {character.origin?.name}</p>
+        <p><strong className='italic text-purple-700'>Location :</strong>  {character.location?.name}</p>
+      </div>
+    </div>
+  );
+}
+
 
   
 

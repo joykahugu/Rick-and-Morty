@@ -1,15 +1,25 @@
 
-import './App.css'
+import './index.css'
+
+import CharacterDetails from './components/CharacterDetails'
 import Characters from './components/Characters'
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   
 
   return (
-    <Characters>
-      
-    </Characters>
+   <Router>
+      <Routes>
+        <Route path="/" element={<Characters />} />
+        <Route path="/character/:id" element={<CharacterDetails />} />
+      </Routes>
+    </Router>
   )
 }
+
+  
+
 
 export default App

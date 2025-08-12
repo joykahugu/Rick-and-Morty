@@ -56,7 +56,8 @@ function Characters() {
         navigate(`/character/${id}`) //opens dynamic viewing
     }
 
-    const filteredCharacters = characters.filter((char) => char.name.toLowercase().includes(searchTerm.toLowerCase()));
+    const filteredCharacters = characters.filter((char) => char.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
 
     return (
         <div
